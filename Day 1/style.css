@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+header{
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1{
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+header p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #d1d5db;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: #38bdf8;
+}
+
+section{
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+section h2{
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #111827;
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 8px;
+}
+
+
+.skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills-list span{
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.education-box, .project-card{
+    background-color: #f9fafb;
+    padding: 18px;
+    border-radius: 10px;
+    border-left: 4px solid #38bdf8;
+}
+
+.education-box h3, .project-card h3{
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.projects-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea{
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea{
+    height: 120px;
+    resize: none;
+}
+
+button{
+    background-color: #111827;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #38bdf8;
+    color: #111827;
+}
+
+footer{
+    text-align: center;
+    background-color: #111827;
+    color: white;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px){
+    
+    header h1{
+        font-size: 28px;
+    }
+
+    header p{
+        font-size: 14px;
+    }
+
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a{
+        margin: 0;
+        font-size: 14px;
+    }
+
+    section{
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    section h2{
+        font-size: 22px;
+    }
+
+    .skills-list span{
+        font-size: 13px;
+        padding: 7px 12 px;
+    }
+}
