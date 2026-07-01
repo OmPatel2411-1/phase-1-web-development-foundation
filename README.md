@@ -10,7 +10,7 @@ The goal of this phase is to build practical basics of HTML, CSS, JavaScript, ba
 
 ## Main Goal
 
-By the end of Phase 1, my target is to build and publish an Amazon-style full-stack mini project using:
+By the end of Phase 1, my target is to build and publish a full-stack e-commerce mini project using:
 
 * HTML
 * CSS
@@ -29,15 +29,15 @@ This challenge is my first step toward that goal.
 
 ## Phase 1 Roadmap
 
-| Day   | Focus                          | Output                               |
-| ----- | ------------------------------ | ------------------------------------ |
-| Day 1 | HTML + Basic CSS               | Personal Developer Profile Page      |
-| Day 2 | CSS Layout + Responsive Design | Amazon Homepage Layout               |
-| Day 3 | JavaScript Basics + DOM        | Product Rendering                    |
-| Day 4 | Cart Functionality             | Add to Cart + Cart Count             |
-| Day 5 | Node.js + Express Basics       | Backend Server + Product API         |
-| Day 6 | Frontend + Backend Connection  | Fetch Products from Backend          |
-| Day 7 | Final Polish                   | Amazon-style Full-Stack Mini Project |
+| Day   | Focus                          | Output                             |
+| ----- | ------------------------------ | ---------------------------------- |
+| Day 1 | HTML + Basic CSS               | Personal Developer Profile Page    |
+| Day 2 | CSS Layout + Responsive Design | E-commerce Homepage Layout         |
+| Day 3 | JavaScript Basics + DOM        | Product Rendering                  |
+| Day 4 | Cart Functionality             | Add to Cart + Cart Count           |
+| Day 5 | Node.js + Express Basics       | Backend Server + Product API       |
+| Day 6 | Frontend + Backend Connection  | Fetch Products from Backend        |
+| Day 7 | Final Polish                   | Full-Stack E-commerce Mini Project |
 
 ## Repository Structure
 
@@ -48,7 +48,7 @@ phase-1-web-development-foundation/
 │   ├── index.html
 │   └── style.css
 │
-├── amazon-fullstack-project/
+├── ecommerce-fullstack-project/
 │   ├── frontend/
 │   │   ├── index.html
 │   │   ├── cart.html
@@ -97,7 +97,7 @@ phase-1-web-development-foundation/
 
 ## Final Project Target
 
-The final project of this phase will be an **Amazon-style full-stack mini project**.
+The final project of this phase will be a **full-stack e-commerce mini project**.
 
 ### Planned Features
 
