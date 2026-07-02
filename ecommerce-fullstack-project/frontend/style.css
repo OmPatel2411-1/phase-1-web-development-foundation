@@ -217,6 +217,28 @@ body{
     background-color: #eab308;
 }
 
+.product-card small{
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.no-products{
+    grid-column: 1/-1;
+    text-align: center;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #4b5563;
+    font-weight: bold;
+}
+
 footer{
     text-align: center;
     background-color: #111827;
