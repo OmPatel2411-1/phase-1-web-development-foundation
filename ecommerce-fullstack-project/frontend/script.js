@@ -4,7 +4,7 @@ const products=[
         name: "HP Laptop",
         category: "Electronics",
         price: 52999,
-        description: "Powerful laptop for student and professionals.",
+        description: "Powerful laptop for students and professionals.",
         imageText: "Laptop"
     },
     {
@@ -12,7 +12,7 @@ const products=[
         name: "Smartphone",
         category: "Mobiles",
         price: 24999,
-        description: "High perofrmance smartphone with quality camera.",
+        description: "High performance smartphone with quality camera.",
         imageText: "Phone"
     },
     {
@@ -37,6 +37,67 @@ const productGrid = document.getElementById("productGrid");
 
 const searchInput = document.getElementById("searchInput");
 
+const cartCount = document.getElementById("cartCount");
+
+const cartItems = document.getElementById("cartItems");
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartCount(){
+    cartCount.textContent = cart.length;
+}
+
+function displayCartItems(){
+    cartItems.innerHTML = "";
+
+    if (cart.length ===0 ){
+        cartItems.innerHTML = `
+            <p class="empty-cart">Your cart is empty.</p>
+        `;
+        return;
+    }
+    cart.forEach(function(item, index){
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+
+        cartItem.innerHTML = `
+            <div>
+                <h3>${item.name}</h3>
+                <span>₹${item.price.toLocaleString("en-IN")}</span>
+            </div>
+            <button onclick="removeFromCart(${index})">Remove</button>
+        `;
+
+        cartItems.appendChild(cartItem);
+    });
+}
+
+function addToCart(productId){
+    const selectedProduct = products.find(function(product){
+        return product.id === productId;
+    });
+
+    if(!selectedProduct){
+        return;
+    }
+
+    cart.push(selectedProduct);
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    updateCartCount();
+    displayCartItems();
+}
+
+function removeFromCart(index){
+    cart.splice(index, 1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartCount();
+    displayCartItems();
+}
+
 function displayProducts(productList){
     productGrid.innerHTML="";
 
@@ -57,7 +118,7 @@ function displayProducts(productList){
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <span>₹${product.price.toLocaleString("en-IN")}</span>
-            <button>Add to Cart</button>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
         `;
 
         productGrid.appendChild(productCard);
@@ -65,6 +126,8 @@ function displayProducts(productList){
 }
 
 displayProducts(products);
+updateCartCount();
+displayCartItems();
 
 searchInput.addEventListener("input",function(){
     const searchValue = searchInput.value.toLowerCase();

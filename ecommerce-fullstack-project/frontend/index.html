@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Amazon Style Store</title>
+        <title>ShopZone - E-commerce Store</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -17,7 +17,9 @@
             <nav class="nav-links">
                 <a href="#">Home</a>
                 <a href="#">Products</a>
-                <a href="#">Cart</a>
+                <a href="#" class="cart-link">
+                    Cart <span id="cartCount">0</span>
+                </a>
                 <a href="#">Account</a>
             </nav>
         </header>
@@ -26,7 +28,7 @@
             <div class="hero-content">
                 <h1>Welcome to ShopZone</h1>
                 <p>
-                    Find the best deals on electornics, fashion, home essentials, and more.
+                    Find the best deals on electronics, fashion, home essentials, and more.
                 </p>
                 <button>Shop Now</button>
             </div>
@@ -65,9 +67,17 @@
 
         </section>
 
+        <section class="cart-section">
+            <h2>Your Cart</h2>
+
+            <div id="cartItems" class="cart-items">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+        </section>
+
         <footer>
             <p>
-                Built by Om Patel | Phase 1 - Day 3/7
+                Built by Om Patel | Phase 1 - Day 4/7
             </p>
         </footer>
 
