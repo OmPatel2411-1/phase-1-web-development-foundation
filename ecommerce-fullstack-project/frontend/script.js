@@ -1,37 +1,6 @@
-const products=[
-    {
-        id: 1,
-        name: "HP Laptop",
-        category: "Electronics",
-        price: 52999,
-        description: "Powerful laptop for students and professionals.",
-        imageText: "Laptop"
-    },
-    {
-        id: 2,
-        name: "Smartphone",
-        category: "Mobiles",
-        price: 24999,
-        description: "High performance smartphone with quality camera.",
-        imageText: "Phone"
-    },
-    {
-        id: 3,
-        name: "Wireless Headphones",
-        category: "Electronics",
-        price: 2499,
-        description: "Clear sound, comfort, and long battery life.",
-        imageText: "Headphones"
-    },
-    {
-        id: 4,
-        name: "Smart Watch",
-        category: "Fitness",
-        price: 3999,
-        description: "Track fitness, notifications, and daily activity.",
-        imageText: "Watch"
-    }
-];
+const API_BASE_URL = "http://localhost:5000";
+
+let products = [];
 
 const productGrid = document.getElementById("productGrid");
 
@@ -125,12 +94,30 @@ function displayProducts(productList){
     });
 }
 
-displayProducts(products);
+async function fetchProducts(){
+    try{
+        productGrid.innerHTML = `
+            <p class = "no-products">Loading products...</p>
+        `;
+
+        const response = await fetch(`${API_BASE_URL}/api/products`);
+
+        products = await response.json();
+
+        displayProducts(products);
+    }catch(error){
+        productGird.innerHTML = `
+            <p class = "no-products">Unable to load products. Please check if backend server is running.</p>
+        `;
+    }
+}
+fetchProducts();
+
 updateCartCount();
 displayCartItems();
 
 searchInput.addEventListener("input",function(){
-    const searchValue = searchInput.value.toLowerCase();
+    const searchValue = searchInput.value.toLowerCase().trim();
 
     const filteredProducts = products.filter(function(product){
         return product.name.toLowerCase().includes(searchValue) || product.category.toLowerCase().includes(searchValue);
