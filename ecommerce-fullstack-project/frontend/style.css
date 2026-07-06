@@ -314,6 +314,27 @@ body{
     background-color: #dc2626;
 }
 
+.project-note{
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    background-color: white;
+    border-left: 5px solid #facc15;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.project-note h2{
+    font-size: 26px;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.project-note p{
+    color: #4b5563;
+    font-size: 16px;
+}
+
 footer{
     text-align: center;
     background-color: #111827;
@@ -393,6 +414,11 @@ footer{
 
     .product-grid{
         grid-template-columns: 1fr;
+    }
+
+    .project-note{
+        margin: 30px 15px;
+        padding: 20px;
     }
 
     .cart-section{
